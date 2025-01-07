@@ -6,6 +6,6 @@
 	"name": "simple_lcov",
 	"releasenote": "initial release",
 	"tags": ["coverage", "lcov"],
-	"url": "https://github.com/AlexHaxe/simple_lcov",
+	"url": "https://github.com/AlexHaxe/haxe-simple_lcov",
 	"version": "1.0.0"
 }

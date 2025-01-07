@@ -1,0 +1,23 @@
+{
+    "name": "haxe-simple_lcov",
+    "version": "1.0.0",
+    "description": "a simple LCOV parser written in Haxe",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/AlexHaxe/haxe-simple_lcov"
+    },
+    "keywords": [
+        "coverage",
+        "haxe",
+        "lcov"
+    ],
+    "author": {
+        "name": "Alexander Blum",
+        "email": "Alexander.Blum@gmail.com"
+    },
+    "devDependencies": {
+        "lix": "^15.12.4"
+    },
+    "bugs": "https://github.com/AlexHaxe/haxe-simple_lcov/issues",
+    "license": "MIT"
+}
