@@ -1,0 +1,15 @@
+--class-path src
+--define analyzer-optimize
+
+lcov.BranchCoverage
+lcov.BranchData
+lcov.FunctionCoverage
+lcov.FunctionData
+lcov.LineCoverage
+lcov.LineData
+lcov.Report
+lcov.SourceFile
+lcov.Token
+
+--define js-es=6
+--js bin/lcov.js

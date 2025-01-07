@@ -1,0 +1,11 @@
+{
+	"classPath": "src",
+	"contributors": ["AlexHaxe"],
+	"description": "Parse LCOV code coverage reports",
+	"license": "MIT",
+	"name": "simple_lcov",
+	"releasenote": "initial release",
+	"tags": ["coverage", "lcov"],
+	"url": "https://github.com/AlexHaxe/simple_lcov",
+	"version": "1.0.0"
+}

@@ -1,0 +1,6 @@
+/.*/
+
+/bin/
+
+/lib/js/lcov.*
+lcov.*

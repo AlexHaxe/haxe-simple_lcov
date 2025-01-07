@@ -1,0 +1,9 @@
+--class-path src
+--class-path test
+--library utest
+--library hxnodejs
+--main TestAll
+-js bin/test.js
+-debug
+
+-cmd node bin/test.js

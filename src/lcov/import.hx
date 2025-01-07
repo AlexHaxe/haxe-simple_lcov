@@ -1,0 +1,3 @@
+package lcov;
+
+using StringTools;
