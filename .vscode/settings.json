@@ -1,0 +1,21 @@
+{
+	"haxe.enableCompilationServer": true,
+	"[haxe]":{
+		"editor.formatOnSave": true,
+		"editor.formatOnPaste": true
+	},
+	"haxe.inlayHints": {
+		"variableTypes": true,
+		"parameterNames": true,
+		"parameterTypes": false,
+		"functionReturnTypes": true,
+		"conditionals": true
+	},
+	"haxe.importsSortOrder": "stdlib -> libs -> project",
+	"haxeTestExplorer.coverageCommand": [
+		"${haxe}",
+		"testCoverage.hxml",
+		"-lib",
+		"test-adapter"
+	]
+}

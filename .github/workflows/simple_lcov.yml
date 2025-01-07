@@ -1,0 +1,53 @@
+name: Haxe-Simple_LCOV
+
+on:
+  push:
+    branches:
+    - master
+  pull_request:
+    branches:
+    - master
+  schedule:
+    - cron: '15 23 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        haxe-version: ['4.3.6', 'nightly']
+    steps:
+    - uses: actions/checkout@v4
+    - name: Use Node.js 18
+      uses: actions/setup-node@v4
+      with:
+        node-version: 18
+    - name: Run npm install
+      run: npm ci
+    - name: Cache Lix repository state
+      uses: actions/cache@v3
+      with:
+        path: ~/haxe
+        key: ${{ runner.os }}-${{ matrix.haxe-version }}-${{ hashFiles('haxe_libraries/*.hxml') }}
+    - name: Install Haxe version ${{ matrix.haxe-version }}
+      run: |
+        npx lix download haxe ${{ matrix.haxe-version }}
+        npx lix use haxe ${{ matrix.haxe-version }}
+    - name: Run lix download
+      run: npx lix download
+    - name: Print versions
+      run: |
+        npx haxe -version
+        npx neko -version
+        npx haxelib list
+    - name: Run Build
+      run: npx haxe build.hxml
+    - name: Run NodeJS tests
+      run: npx haxe test.hxml
+    - name: Run NodeJS tests (with coverage)
+      run: npx haxe testCoverage.hxml
+    - name: Coverage report
+      if: success() && (matrix.haxe-version != 'nightly')
+      uses: livewing/lcov-job-summary@v1.1.0
+      with:
+        lcov: lcov.info
